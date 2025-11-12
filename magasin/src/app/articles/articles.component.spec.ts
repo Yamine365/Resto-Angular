@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PassCommandComponent } from './pass-command.component';
+import { ArticlesComponent } from './articles.component';
 
-describe('PassCommandComponent', () => {
-  let component: PassCommandComponent;
-  let fixture: ComponentFixture<PassCommandComponent>;
+describe('ArticlesComponent', () => {
+  let component: ArticlesComponent;
+  let fixture: ComponentFixture<ArticlesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PassCommandComponent]
+      declarations: [ArticlesComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PassCommandComponent);
+    fixture = TestBed.createComponent(ArticlesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
