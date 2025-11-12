@@ -1,0 +1,45 @@
+<div class="container">
+    <div>
+      <h2>Modifier une commande</h2>
+    </div>
+    <form (ngSubmit)="modifcommande()" #commandeForm="ngForm">
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <label>Code</label>
+        <input readonly type="text" [(ngModel)]="CommandeCourant.codea" name="codea" class="form-control">
+      </div>
+      
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Libellé</label>
+        <input type="text" [(ngModel)]="CommandeCourant.nom" name="libelle" class="form-control">
+      </div>
+      
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <label>Prix</label>
+        <input type="number" [(ngModel)]="CommandeCourant.prix" name="prix" class="form-control">
+      </div>
+      
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <label>Quantité</label>
+        <input type="number" [(ngModel)]="CommandeCourant.quantite" name="qte" class="form-control">
+      </div>
+      
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Date d'ajout</label>
+        <input type="date" [ngModel]="CommandeCourant.datePass | date: 'yyyy-MM-dd'" (ngModelChange)="CommandeCourant.datePass = $event" name="dateAjout" class="form-control">
+      </div>
+      
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label for="codec">Catégorie</label>
+        <select class="form-control form-control-lg" id="codec" name="codec" [(ngModel)]="codecModifie">
+          <option *ngFor="let cat of categories" [value]="cat.codec">
+            {{ cat.nomCat }}
+          </option>
+        </select>
+      </div>
+      
+      <div class="mt-2">
+        <button type="button" (click)="modifcommande()" class="btn btn-success">Modifier</button>
+      </div>
+    </form>
+  </div>
+  

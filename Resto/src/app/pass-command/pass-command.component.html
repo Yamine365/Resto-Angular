@@ -1,0 +1,61 @@
+<div class="container">
+    <div>
+    <h2>Passer une Commande</h2>
+    </div>
+    <form >
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Code Commande</label>
+    <input type="number" [(ngModel)]="newcommande.codea"
+    
+    name="codea" class="form-control">
+    
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >nom</label>
+    <input type="text" [(ngModel)]="newcommande.nom"
+    
+    name="nom" class="form-control">
+    
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Prix</label>
+    <input type="number" [(ngModel)]="newcommande.prix"
+    
+    name="prix" class="form-control">
+    
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Quantité</label>
+    <input type="number" [(ngModel)]="newcommande.quantite"
+    
+    name="quantite" class="form-control">
+    
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Date de passer la commande</label>
+    <input type="date" [(ngModel)]="newcommande.datePass"
+    
+    name="datePass" class="form-control">
+    
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <label for="codec">Catégorie</label>
+        <select class="form-control form-control-lg" id="codec" name="codec" [(ngModel)]="newCodec">
+          <option *ngFor="let cat of categories" [value]="cat.codec">
+            {{ cat.nomCat }}
+          </option>
+        </select>
+      </div>
+
+    <div class="mt-2">
+    <button type="submit" (click)="passerCommande()" class="btn
+    
+    btn-success">Passer</button>
+    
+    </div>
+    </form>
+    </div>
+    <div>
+        <app-commandes></app-commandes>
+    </div>

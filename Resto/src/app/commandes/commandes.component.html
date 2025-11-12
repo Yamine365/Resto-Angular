@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <h1>Liste des commandes</h1>
+    <table width="100%">
+    <thead>
+    <tr>
+    <th>Code</th>
+    <th>nom</th>
+    <th>Prix</th>
+    <th>Quantité</th>
+    <th>Date de commande</th>
+    <th>Catégorie</th> 
+    <th>Action</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let Commande of tab_com">
+    <tr >
+    <td>{{Commande.codea}}</td>
+    <td>{{Commande.nom  | uppercase}}</td>
+    <td>{{Commande.prix | number : '1.3'}}</td>
+    <td>{{Commande.quantite}}</td>
+    <td>{{Commande.datePass | date:'dd/MM/yyyy' }}</td>
+    <td>{{Commande.categ.nomCat}}</td> 
+   
+        
+    <td>  <!-- btn btn-danger -->
+        <!-- (click)="suppCommande(Commande)" -->
+        <button class="editing">
+            <img src="assets/img/edit.png" [routerLink]="['/update-commande', Commande.codea]">
+          </button>                   
+          
+        <a class="btn btn-danger" (click)="suppCommande(Commande)"><img src="assets/img/delete.png"></a>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
